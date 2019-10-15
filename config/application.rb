@@ -29,7 +29,11 @@ module RailsPinningApp
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
 
-    # Don't generate system test files.
-    config.generators.system_tests = nil
+    config.generators do |g|
+      # Don't generate view test files.
+      g.view_specs false
+      # Don't generate system test files.
+      g.system_tests nil
+    end
   end
 end
